@@ -88,6 +88,7 @@
     .pediatric-intro { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(17px, 1.35vw, 20px); line-height: 1.76; letter-spacing: -.02em; }
     .pediatric-stage { width: var(--container); margin: 0 auto; display: grid; grid-template-columns: minmax(260px, 1fr) minmax(360px, 430px) minmax(260px, 1fr); gap: clamp(44px, 5vw, 76px); align-items: center; }
     .pediatric-side { display: grid; gap: 18px; }
+    .pediatric-side:last-child { margin-left: clamp(22px, 2.4vw, 42px); }
     .pediatric-card { padding: 26px 0; border-top: 1px solid rgba(7, 23, 34, .16); transform: translateY(28px); opacity: 0; transition: opacity .7s ease, transform .7s var(--ease); transition-delay: calc(var(--delay, 0) * 110ms); }
     .pediatric-section.visible .pediatric-card { opacity: 1; transform: translateY(0); }
     .pediatric-card span { color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
@@ -197,6 +198,7 @@
     .care-image, .care-image img { min-height: 500px; }
     .pediatric-head { grid-template-columns: 1fr; gap: 24px; }
     .pediatric-stage { grid-template-columns: 1fr; gap: 22px; }
+    .pediatric-side:last-child { margin-left: 0; }
     .pediatric-media { min-height: 540px; order: -1; }
     .pediatric-photo { width: min(520px, 100%); }
     .pediatric-float.one, .pediatric-float.two { left: auto; right: auto; transform: none; }
@@ -458,7 +460,7 @@
 <section class="section doctor-section" id="especialista">
 <div class="container doctor-grid">
 <figure class="doctor-photo" data-reveal>
-<img src="DR_SAMUEL.jpeg" alt="Dr. Samuel Henrique" />
+<img src="DR_SAMUEL.jpeg.jpg" alt="Dr. Samuel Henrique" />
 </figure>
 <div class="bio" data-reveal>
 <span class="eyebrow">Especialista</span>
