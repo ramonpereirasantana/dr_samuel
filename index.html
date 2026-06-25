@@ -80,20 +80,30 @@
     .clinical-row span { color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
     .clinical-row h3 { color: var(--navy); font-size: clamp(31px, 3.2vw, 54px); line-height: .95; letter-spacing: -.045em; }
     .clinical-row p { max-width: 700px; margin: 13px 0 0; color: var(--muted); line-height: 1.72; }
-    .pediatric-section { background: var(--cream-2); }
-    .pediatric-grid { display: grid; grid-template-columns: minmax(330px, .9fr) minmax(0, 1.1fr); gap: 68px; align-items: center; }
-    .pediatric-media { position: relative; display: grid; place-items: center; min-height: 660px; overflow: hidden; border-radius: 48px; background: radial-gradient(circle at 50% 22%, rgba(224, 189, 118, .2), transparent 32vw), var(--sand); box-shadow: 0 28px 90px rgba(7, 23, 34, .13); }
-    .pediatric-media img { width: 100%; height: 100%; min-height: 660px; object-fit: cover; object-position: center; }
-    .pediatric-media::after { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(255, 250, 241, .72); border-radius: 34px; pointer-events: none; }
-    .pediatric-copy { max-width: 720px; }
-    .pediatric-copy h2 { max-width: 760px; }
-    .pediatric-intro { margin: 22px 0 34px; color: var(--muted); font-size: clamp(17px, 1.35vw, 20px); line-height: 1.72; letter-spacing: -.02em; }
-    .pediatric-points { border-top: 1px solid var(--line); }
-    .pediatric-point { padding: 26px 0; display: grid; grid-template-columns: 150px 1fr; gap: 28px; border-bottom: 1px solid var(--line); }
-    .pediatric-point span { color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
-    .pediatric-point h3 { color: var(--navy); font-size: clamp(28px, 2.8vw, 46px); line-height: .96; letter-spacing: -.045em; }
-    .pediatric-point p { margin: 10px 0 0; color: var(--muted); line-height: 1.72; }
-    .safety-note { margin-top: 30px; padding-left: 24px; border-left: 1px solid var(--gold); color: var(--muted); line-height: 1.72; }
+    .pediatric-section { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, var(--cream) 0%, #fff7ea 42%, #f4e8d5 100%); }
+    .pediatric-section::before { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(circle at 12% 20%, rgba(224, 189, 118, .34), transparent 28vw), radial-gradient(circle at 88% 72%, rgba(7, 23, 34, .08), transparent 24vw); }
+    .pediatric-section::after { content: "PEDIATRIA"; position: absolute; right: -3vw; top: 72px; z-index: -1; color: rgba(7, 23, 34, .035); font-family: var(--serif); font-size: clamp(92px, 17vw, 245px); letter-spacing: -.08em; line-height: .8; pointer-events: none; }
+    .pediatric-head { width: var(--container); margin: 0 auto 58px; display: grid; grid-template-columns: .78fr 1.22fr; gap: 54px; align-items: end; }
+    .pediatric-head h2 { max-width: 790px; }
+    .pediatric-intro { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(17px, 1.35vw, 20px); line-height: 1.76; letter-spacing: -.02em; }
+    .pediatric-stage { width: var(--container); margin: 0 auto; display: grid; grid-template-columns: minmax(280px, .7fr) minmax(360px, 1fr) minmax(280px, .7fr); gap: 34px; align-items: center; }
+    .pediatric-side { display: grid; gap: 18px; }
+    .pediatric-card { padding: 26px 0; border-top: 1px solid rgba(7, 23, 34, .16); transform: translateY(28px); opacity: 0; transition: opacity .7s ease, transform .7s var(--ease); transition-delay: calc(var(--delay, 0) * 110ms); }
+    .pediatric-section.visible .pediatric-card { opacity: 1; transform: translateY(0); }
+    .pediatric-card span { color: var(--gold); font-size: 12px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
+    .pediatric-card h3 { margin-top: 14px; color: var(--navy); font-size: clamp(30px, 3vw, 48px); line-height: .95; letter-spacing: -.045em; }
+    .pediatric-card p { margin: 12px 0 0; color: var(--muted); line-height: 1.72; }
+    .pediatric-media { position: relative; min-height: 680px; display: grid; place-items: center; }
+    .pediatric-orbit { position: absolute; inset: 7%; border: 1px solid rgba(198, 154, 75, .34); border-radius: 999px; transform: rotate(-12deg) scale(var(--pediatric-orbit-scale, .94)); opacity: .75; transition: transform .2s linear; }
+    .pediatric-orbit::after { content: ""; position: absolute; width: 12px; height: 12px; right: 17%; top: 4%; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 10px rgba(198, 154, 75, .13); }
+    .pediatric-photo { position: relative; z-index: 1; width: min(520px, 86vw); overflow: hidden; border-radius: 52% 52% 42px 42px; background: var(--sand); box-shadow: 0 34px 110px rgba(7, 23, 34, .18); transform: translateY(var(--pediatric-photo-y, 0px)) scale(var(--pediatric-photo-scale, .96)); transition: transform .2s linear; }
+    .pediatric-photo img { width: 100%; aspect-ratio: 4 / 5.25; object-fit: cover; object-position: center; }
+    .pediatric-photo::after { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(255, 250, 241, .76); border-radius: 48% 48% 30px 30px; pointer-events: none; }
+    .pediatric-float { position: absolute; z-index: 2; max-width: 230px; padding: 15px 17px; border: 1px solid rgba(198, 154, 75, .32); border-radius: 999px; color: var(--navy); background: rgba(255, 250, 241, .82); backdrop-filter: blur(16px); box-shadow: 0 18px 60px rgba(7, 23, 34, .12); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .pediatric-float.one { left: 0; top: 18%; transform: translateX(-8%); }
+    .pediatric-float.two { right: -2%; bottom: 20%; }
+    .pediatric-note { width: var(--container); margin: 56px auto 0; padding: 28px 0 0; display: grid; grid-template-columns: 170px 1fr; gap: 34px; border-top: 1px solid rgba(7, 23, 34, .16); color: var(--muted); line-height: 1.72; }
+    .pediatric-note strong { color: var(--navy); font-size: 12px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
     .dark-section { position: relative; overflow: hidden; color: var(--cream); background: radial-gradient(circle at 92% 8%, rgba(198, 154, 75, .18), transparent 26vw), var(--navy); }
     .dark-section h2 { color: var(--cream); }
     .dark-section .lead { color: rgba(248, 241, 229, .66); }
@@ -187,9 +197,14 @@
     .clinical-ribbon { padding-bottom: 66px; }
     .clinical-ribbon-inner { grid-template-columns: 1fr; gap: 18px; border-radius: 30px; }
     .sticky, .care-image, .score { position: relative; top: auto; }
-    .care-image, .care-image img, .pediatric-media, .pediatric-media img { min-height: 500px; }
-    .pediatric-grid { grid-template-columns: 1fr; }
-    .pediatric-media { max-width: 760px; width: 100%; margin: 0 auto; }
+    .care-image, .care-image img { min-height: 500px; }
+    .pediatric-head { grid-template-columns: 1fr; gap: 24px; }
+    .pediatric-stage { grid-template-columns: 1fr; gap: 22px; }
+    .pediatric-media { min-height: 540px; order: -1; }
+    .pediatric-photo { width: min(520px, 100%); }
+    .pediatric-float.one { left: 18px; transform: none; }
+    .pediatric-float.two { right: 18px; }
+    .pediatric-note { grid-template-columns: 1fr; gap: 12px; }
     .journey-steps { grid-template-columns: 1fr 1fr; }
     .journey-step:nth-child(2) { border-right: 0; }
     .journey-step:nth-child(1), .journey-step:nth-child(2) { border-bottom: 1px solid var(--line); } }
@@ -213,10 +228,17 @@
     .clinical-ribbon-inner p { font-size: clamp(26px, 8vw, 38px); }
     .section { padding: 84px 0; }
     .story-block { padding-left: 20px; }
-    .clinical-row, .method-line, .quote, .detail, .credential-band, .pediatric-point { grid-template-columns: 1fr; gap: 12px; }
-    .care-image, .care-image img, .pediatric-media, .pediatric-media img { min-height: 420px; }
-    .pediatric-media { border-radius: 34px; }
-    .pediatric-media::after { inset: 16px; border-radius: 24px; }
+    .clinical-row, .method-line, .quote, .detail, .credential-band { grid-template-columns: 1fr; gap: 12px; }
+    .care-image, .care-image img { min-height: 420px; }
+    .pediatric-section::after { top: 34px; right: -18vw; }
+    .pediatric-head { margin-bottom: 34px; }
+    .pediatric-media { min-height: 430px; }
+    .pediatric-photo { border-radius: 44% 44% 30px 30px; }
+    .pediatric-photo::after { inset: 14px; border-radius: 40% 40% 22px 22px; }
+    .pediatric-float { position: relative; inset: auto; justify-self: center; max-width: none; width: max-content; margin: -10px auto 0; }
+    .pediatric-float.one, .pediatric-float.two { left: auto; right: auto; top: auto; bottom: auto; transform: none; }
+    .pediatric-side { gap: 0; }
+    .pediatric-card { padding: 22px 0; }
     .journey-box { border-radius: 34px; }
     .journey-steps { grid-template-columns: 1fr; }
     .journey-step { min-height: auto; gap: 34px; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -356,40 +378,51 @@
 </div>
 </div>
 </section>
-<section class="section pediatric-section" id="pediatrica">
-<div class="container pediatric-grid">
-<figure class="pediatric-media" data-reveal>
-<img src="bb.jpeg" alt="Bebê em atendimento de osteopatia pediátrica" />
-</figure>
-<div class="pediatric-copy" data-reveal>
+<section class="section pediatric-section" id="pediatrica" data-pediatric>
+<div class="pediatric-head" data-reveal>
+<div>
 <span class="eyebrow">Osteopatia pediátrica</span>
 <h2>Cuidado suave para bebês e crianças em desenvolvimento.</h2>
-<p class="pediatric-intro"> A osteopatia pediátrica utiliza técnicas manuais leves e específicas para avaliar tensões e restrições que podem influenciar sono, amamentação, digestão, postura e desenvolvimento motor. </p>
-<div class="pediatric-points">
-<article class="pediatric-point">
+</div>
+<p class="pediatric-intro"> Técnicas manuais leves e específicas ajudam a avaliar tensões e restrições que podem influenciar sono, amamentação, digestão, postura e desenvolvimento motor. </p>
+</div>
+<div class="pediatric-stage">
+<div class="pediatric-side">
+<article class="pediatric-card" style="--delay: 0">
 <span>Quando procurar</span>
-<div>
 <h3>Sinais que merecem avaliação</h3>
-<p>Dificuldade na pega ou amamentação, cólicas e refluxo persistente, choro excessivo, torcicolo, assimetria craniana, atraso motor, otites de repetição e alterações posturais.</p>
-</div>
+<p>Dificuldade na pega, cólicas, refluxo persistente, choro excessivo, torcicolo, assimetria craniana, atraso motor e alterações posturais.</p>
 </article>
-<article class="pediatric-point">
+<article class="pediatric-card" style="--delay: 1">
+<span>Recém-nascidos</span>
+<h3>Toque leve, sem manobras fortes</h3>
+<p>Em bebês, o tratamento é delicado, indolor e adaptado à idade, respeitando desenvolvimento, conforto e segurança.</p>
+</article>
+</div>
+<figure class="pediatric-media" data-reveal>
+<span class="pediatric-orbit" aria-hidden="true"></span>
+<span class="pediatric-float one">Sono · pega · conforto</span>
+<span class="pediatric-float two">Crânio · coluna · abdome</span>
+<div class="pediatric-photo">
+<img src="bb.jpeg" alt="Bebê em atendimento de osteopatia pediátrica" />
+</div>
+</figure>
+<div class="pediatric-side">
+<article class="pediatric-card" style="--delay: 2">
 <span>Na consulta</span>
-<div>
 <h3>Avaliação completa e delicada</h3>
-<p>O bebê é avaliado em crânio, coluna, caixa torácica, abdome e articulações. O tratamento usa toques leves, indolores e adaptados à idade, sem manobras fortes.</p>
-</div>
+<p>O bebê é avaliado em crânio, coluna, caixa torácica, abdome e articulações para encontrar restrições de mobilidade.</p>
 </article>
-<article class="pediatric-point">
+<article class="pediatric-card" style="--delay: 3">
 <span>Segurança</span>
-<div>
 <h3>Integrado ao cuidado pediátrico</h3>
-<p>A abordagem é não invasiva quando realizada por profissional qualificado. Quando necessário, o acompanhamento é integrado ao pediatra ou a outros especialistas.</p>
-</div>
+<p>A abordagem deve ser feita por profissional qualificado e, quando necessário, integrada ao acompanhamento do pediatra.</p>
 </article>
 </div>
-<p class="safety-note"> Antes de marcar, pergunte sobre formação em osteopatia pediátrica, experiência com recém-nascidos, plano de cuidado, número estimado de sessões e critérios de encaminhamento médico. </p>
 </div>
+<div class="pediatric-note" data-reveal>
+<strong>Antes de marcar</strong>
+<p>Pergunte sobre formação em osteopatia pediátrica, experiência com recém-nascidos, plano de cuidado, número estimado de sessões e critérios de encaminhamento médico.</p>
 </div>
 </section>
 <section class="section dark-section" id="metodo">
@@ -657,6 +690,21 @@
     const revealItems = document.querySelectorAll("[data-reveal]");
     const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); } }); }, { threshold: 0.12 });
     revealItems.forEach((item) => observer.observe(item));
+    const pediatricSection = document.querySelector("[data-pediatric]");
+    const pediatricObserver = pediatricSection ? new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) pediatricSection.classList.add("visible"); }); }, { threshold: 0.28 }) : null;
+    if (pediatricObserver) pediatricObserver.observe(pediatricSection);
+    function updatePediatricScroll() {
+      if (!pediatricSection) return;
+      const rect = pediatricSection.getBoundingClientRect();
+      const range = window.innerHeight + rect.height;
+      const progress = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / range));
+      pediatricSection.style.setProperty("--pediatric-photo-y", `${(progress - .5) * -34}px`);
+      pediatricSection.style.setProperty("--pediatric-photo-scale", `${.94 + progress * .055}`);
+      pediatricSection.style.setProperty("--pediatric-orbit-scale", `${.9 + progress * .18}`);
+    }
+    updatePediatricScroll();
+    window.addEventListener("scroll", updatePediatricScroll, { passive: true });
+    window.addEventListener("resize", updatePediatricScroll);
     document.querySelectorAll(".faq-question").forEach((button) => { button.addEventListener("click", () => { button.closest(".faq-item").classList.toggle("open"); }); });
     document.querySelector("#bookingForm").addEventListener("submit", (event) => { event.preventDefault();
     const form = event.currentTarget; if (!form.checkValidity()) { form.reportValidity(); return; } const data = new FormData(form);
