@@ -50,7 +50,7 @@
     .hero-proof span { display: block; margin-top: 8px; color: rgba(248, 241, 229, .56); font-size: 12px; font-weight: 800; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; }
     .hero-media { position: relative; min-height: 640px; }
     .photo-frame { position: absolute; right: 0; bottom: 0; width: min(530px, 96%); overflow: hidden; border-radius: 42px; background: #f3f1ee; box-shadow: 0 34px 110px rgba(0, 0, 0, .35); }
-    .photo-frame img { width: 100%; aspect-ratio: 4 / 5.25; object-fit: contain; object-position: center center; background: #f3f1ee; }
+    .photo-frame img { width: 100%; aspect-ratio: 4 / 4.55; object-fit: cover; object-position: center top; background: #f3f1ee; }
     .floating-bio { position: absolute; left: 0; bottom: 54px; z-index: 2; width: min(315px, 56%); padding: 24px 26px; border: 1px solid rgba(224, 189, 118, .34); border-radius: 30px; color: var(--cream); background: linear-gradient(135deg, rgba(7, 23, 34, .9), rgba(16, 47, 62, .72)); backdrop-filter: blur(20px); box-shadow: 0 26px 80px rgba(0, 0, 0, .28); }
     .floating-bio p { margin: 0; color: rgba(248, 241, 229, .82); font-size: 15px; font-weight: 650; line-height: 1.58; letter-spacing: -.02em; }
     .clinical-ribbon { position: relative; z-index: 4; padding: 0 0 78px; background: linear-gradient(180deg, var(--navy) 0 74px, var(--cream) 74px 100%); }
@@ -190,7 +190,7 @@
     .hero { padding-top: 122px; }
     .hero-media { min-height: auto; margin-top: 34px; display: grid; }
     .photo-frame { position: relative; right: auto; bottom: auto; justify-self: center; width: min(560px, 100%); }
-    .photo-frame img { object-position: center center; }
+    .photo-frame img { object-position: center top; }
     .floating-bio { left: 24px; bottom: 28px; }
     .clinical-ribbon { padding-bottom: 66px; }
     .clinical-ribbon-inner { grid-template-columns: 1fr; gap: 18px; border-radius: 30px; }
@@ -217,7 +217,7 @@
     .hero-proof div { padding: 18px 0; border-bottom: 1px solid var(--line-light); }
     .hero-media { min-height: auto; margin-top: 30px; }
     .photo-frame { width: 100%; border-radius: 32px; }
-    .photo-frame img { aspect-ratio: 4 / 5.15; object-position: center center; }
+    .photo-frame img { aspect-ratio: 4 / 4.65; object-position: center top; }
     .floating-bio { position: relative; left: auto; bottom: auto; width: calc(100% - 28px); margin: -42px auto 0; padding: 20px 22px; border-radius: 24px; }
     .floating-bio p { font-size: 14px; }
     .clinical-ribbon { padding: 0 0 50px; background: linear-gradient(180deg, var(--navy) 0 48px, var(--cream) 48px 100%); }
