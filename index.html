@@ -841,6 +841,118 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* =========================================================
+   AJUSTE FINAL V2 — FOTO DA PROFISSIONAL COM MAIS DESTAQUE
+   - foto maior no mobile
+   - remove círculo/bege ao fundo
+   - nome menor para equilibrar o card
+   ========================================================= */
+.contact-partner-head {
+  display: grid !important;
+  grid-template-columns: 152px minmax(0, 1fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+}
+
+.contact-partner-photo {
+  width: 152px !important;
+  height: 152px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 28px !important;
+  background: transparent !important;
+  box-shadow: 0 18px 42px rgba(7, 23, 34, .13) !important;
+}
+
+.contact-partner-photo::before {
+  content: none !important;
+  display: none !important;
+}
+
+.contact-partner-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 28px !important;
+  filter: none !important;
+}
+
+.contact-partner h3 {
+  max-width: 100% !important;
+  margin-top: 7px !important;
+  font-size: clamp(21px, 1.55vw, 28px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.026em !important;
+}
+
+@media (max-width: 680px) {
+  .contact-partner {
+    padding: 22px !important;
+  }
+
+  .contact-partner-head {
+    grid-template-columns: 126px minmax(0, 1fr) !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  .contact-partner-photo {
+    width: 126px !important;
+    height: 126px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 16px 34px rgba(7, 23, 34, .13) !important;
+  }
+
+  .contact-partner-photo img {
+    border-radius: 24px !important;
+  }
+
+  .contact-partner-kicker {
+    font-size: 8.5px !important;
+    letter-spacing: .1em !important;
+  }
+
+  .contact-partner h3 {
+    font-size: clamp(18px, 5vw, 22px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -.024em !important;
+  }
+
+  .contact-partner-role {
+    margin-top: 22px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-partner {
+    padding: 20px !important;
+  }
+
+  .contact-partner-head {
+    grid-template-columns: 116px minmax(0, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .contact-partner-photo {
+    width: 116px !important;
+    height: 116px !important;
+    border-radius: 22px !important;
+  }
+
+  .contact-partner-photo img {
+    border-radius: 22px !important;
+  }
+
+  .contact-partner h3 {
+    font-size: clamp(17px, 5vw, 21px) !important;
+  }
+}
 </style>
 </head>
 <body>
