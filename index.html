@@ -1097,6 +1097,51 @@
   filter: brightness(0) invert(1) !important;
 }
 
+.booking-grid {
+  align-items: start !important;
+}
+
+.booking-copy {
+  position: relative !important;
+  align-self: start !important;
+  padding-top: clamp(8px, 2vw, 22px) !important;
+}
+
+.booking-copy h2 {
+  margin-top: 18px !important;
+}
+
+.booking-copy p {
+  max-width: 640px !important;
+}
+
+.booking-shadow-figure {
+  width: min(360px, 68%) !important;
+  margin: clamp(34px, 6vw, 74px) 0 0 !important;
+  opacity: .18 !important;
+  filter: grayscale(1) brightness(0) invert(1) blur(.2px) !important;
+  mix-blend-mode: screen !important;
+  transform: rotate(-7deg) translateX(10px) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+@media (max-width: 1050px) {
+  .booking-grid {
+    gap: 34px !important;
+  }
+
+  .booking-copy {
+    padding-top: 0 !important;
+  }
+
+  .booking-shadow-figure {
+    width: min(300px, 72%) !important;
+    margin-top: 28px !important;
+    opacity: .14 !important;
+  }
+}
+
 @media (max-width: 680px) {
   .doctor-photo {
     width: min(100%, 360px) !important;
@@ -1539,10 +1584,11 @@
 </section>
 <section class="booking" id="agendamento">
 <div class="booking-grid">
-<div data-reveal>
+<div class="booking-copy" data-reveal>
 <span class="eyebrow">Agendamento</span>
 <h2>Comece contando o que você sente.</h2>
 <p> Preencha os dados e o site abrirá uma mensagem organizada no WhatsApp. O envio não substitui avaliação clínica presencial. </p>
+<img class="booking-shadow-figure" src="prejuizo.png" alt="" aria-hidden="true" />
 </div>
 <form class="form" id="bookingForm" data-reveal>
 <label for="name">Nome</label>
